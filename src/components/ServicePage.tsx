@@ -1,7 +1,6 @@
 import Image from "next/image"
 import ServiceHeroSec from "./ServiceHeroSec"
 import { Button } from "./ui/button"
-import { info } from "console"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
 
 const avatars = [
@@ -149,6 +148,7 @@ const priceBullets: { num: number, point: string }[] = [
         point: "SOP-driven workflows with clear timelines & delivery accountability.",
     },
 ]
+
 const launchBullets: { num: number, point: string }[] = [
     {
         num: 1,
@@ -160,7 +160,7 @@ const launchBullets: { num: number, point: string }[] = [
     },
     {
         num: 3,
-        point: "A structured finance pod - we assign specialists; managed by an account manager. ",
+        point: "A structured finance pod - we assign specialists; managed by an account manager.",
     },
     {
         num: 4,
@@ -247,7 +247,7 @@ const serviceCards: { img: string, head: string, info: string }[] = [
 const ServicePage = () => {
     return (
         <div className=''>
-            <ServiceHeroSec />
+            <ServiceHeroSec info ={["Looking for the best monthly bookkeeping services in the USA?","At Trueledgr, we streamline your finances, ensure compliance, and deliver monthly reports with CPA coordination all through reliable, tailored bookkeeping solutions built around your business."]} blueHead="Leading Bookkeeping" head="Services in the USA" img="heroService1.svg" button="booking" />
             <div className="py-20">
                 <div className="space-y-8  mx-auto max-w-[1348px]">
                     <div className="text-center space-y-4">

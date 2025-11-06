@@ -26,7 +26,7 @@ import {
     SheetTrigger,
     SheetClose,
 } from "@/components/ui/sheet";
-import { serviceSec, industrySec } from "@/data";
+import { serviceSec, industrySec } from "@/data/data";
 // import { ThemeToggle } from "./ThemeToggle";
 import Link from "next/link";
 import Image from "next/image";

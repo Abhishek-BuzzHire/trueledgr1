@@ -1,4 +1,4 @@
-import { serviceSec } from "@/data";
+import { serviceSec } from "@/data/data";
 import Image from "next/image";
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube, FaWhatsapp } from "react-icons/fa";
