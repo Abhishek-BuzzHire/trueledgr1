@@ -1,3 +1,5 @@
+"use client"
+
 import { servicesData } from "@/data/servicesData"
 import { notFound } from "next/navigation";
 import { use } from "react"
@@ -6,6 +8,8 @@ import ServiceHeroSec from "@/components/ServiceHeroSec";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import PricingPage from "@/components/Pricing";
+import Link from "next/link";
+import TestimonialSec from "@/components/TestimonialSec";
 
 const avatars = [
     "https://randomuser.me/api/portraits/women/44.jpg",
@@ -87,21 +91,31 @@ const solWorkImg: string[] = [
     "1.svg", "2.svg", "3.svg",
 ]
 
-const serviceCards: { img: string, head: string, info: string }[] = [
+const serviceCardData: { img: string, head: string, info: string, slug: string}[] = [
+    {
+        img:"4.svg",
+        head: "BookKeeping Services",
+        info: "We take the stress out of bookkeeping with expert support, clean monthly reports, and CPA-ready financials.",
+        slug: "bookkeeping-service",
+
+    },
     {
         img: "1.svg",
         head: "Payroll Services",
         info: "We run payroll accurately, file taxes on time, and keep your business 100% compliant without stress.",
+        slug: "payroll-service",
     },
     {
         img: "2.svg",
         head: "Accounts Receivable & Payable Services",
         info: "From chasing invoices to paying vendors, we manage AR/AP smoothly - improving cash flow and eliminating late payment stress.",
+        slug: "receivable-payable-service",
     },
     {
         img: "3.svg",
         head: "Catch-Up Bookkeeping Services",
         info: "Behind on books? We clean, reconcile, and deliver accurate, audit-ready financials fast - no more messy backlog.",
+        slug: "catchup-bookkeeping-service",
     },
 ]
 
@@ -110,6 +124,8 @@ const ServicePage = ({ params }: { params: Promise<{ slug: string }> }) => {
     const data = servicesData.find((s) => s.slug === slug);
 
     if (!data) return notFound();
+
+    const serviceCard = serviceCardData.filter(service => service.slug !== slug);
 
     return (
         <div className=''>
@@ -333,8 +349,9 @@ const ServicePage = ({ params }: { params: Promise<{ slug: string }> }) => {
                         <p className="text-4xl font-bold capitalize">Get Even More Form trueledgr with these add-ons</p>
                     </div>
                     <div className="grid grid-cols-3 gap-8 p-1">
-                        {serviceCards.map((card, i) => (
+                        {serviceCard.map((card, i) => (
                             <div key={i} className="p-2 pb-8 bg-white rounded-md space-y-6 shadow-md border border-chart-1">
+                                
                                 <div className="flex justify-center w-full h-65 bg-chart-4 p-6">
                                     <Image src={`/servicesCards/${card.img}`} alt={card.head} width={252.1} height={210} />
                                 </div>
@@ -343,66 +360,17 @@ const ServicePage = ({ params }: { params: Promise<{ slug: string }> }) => {
                                         <p className="text-xl font-semibold">{card.head}</p>
                                         <p className="text-md">{card.info}</p>
                                     </div>
+                                    <Link href={`/services/${card.slug}`}>
                                     <p className="text-chart-3 mt-8">Read More</p>
+                                    </Link>
                                 </div>
+                           
                             </div>
                         ))}
                     </div>
                 </div>
             </div>
-
-            <div className="py-20" style={{
-                backgroundImage: "linear-gradient(rgba(29,133,238,0.02), rgba(29,133,238,0.02)), url('/testimonials-bg.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-            }}>
-                <div className="mx-auto max-w-[1348px] flex gap-32 justify-between items-center">
-                    <div className="space-y-8">
-                        <div className="space-y-2">
-                            <p className="text-2xl text-chart-2 font-semibold">Testimonial's</p>
-                            <p className="text-4xl font-bold">Our Client's Review Inspired  Us The Most to Improve Our Services</p>
-                        </div>
-                        <div className="flex gap-4 items-end">
-                            <div className="flex -space-x-4">
-                                {avatars.map((img, index) => (
-                                    <Image
-                                        key={index}
-                                        src={img}
-                                        alt={`avatar-${index}`}
-                                        className="w-12 h-12 rounded-full border-2 border-white object-cover"
-                                        width={43.33}
-                                        height={43.33}
-                                    />
-                                ))}
-                            </div>
-                            <div>
-                                <Image src={"/stars.svg"} alt="" width={100} height={20} />
-                                <p>From 1K+ Reveiw</p>
-                            </div>
-                        </div>
-                        <Button className="p-6 px-16 bg-chart-3 rounded-sm font-semibold uppercase text-md">View All Feedback</Button>
-                    </div>
-                    <div className="space-y-6 max-w-2xl">
-                        <div className="relative bg-white border border-black/10 px-10">
-                            <Image src={"https://randomuser.me/api/portraits/women/44.jpg"} alt="" width={100} height={100} className="rounded-full absolute -top-12 left-10" />
-                            <div className="pt-24 pb-14 border-b-2 border-chart-3 space-y-6">
-                                <p className="italic text-lg">Trueledgr's bookkeeping and custom reports have transformed our business. They manage landed costs, commissions, and reconciliations seamlessly, giving us financial clarity and confidence to scale Kiva Stones without blind spots.</p>
-                                <div className="space-y-1">
-                                    <p className="text-2xl font-semibold">Genevieve</p>
-                                    <p>Managing Director</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="flex gap-2 items-center justify-center">
-                            <div className="w-4 h-4 rounded-full bg-chart-3"></div>
-                            <div className="w-3 h-3 rounded-full bg-chart-3/50"></div>
-                            <div className="w-3 h-3 rounded-full bg-chart-3/50"></div>
-                            <div className="w-3 h-3 rounded-full bg-chart-3/50"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+            <TestimonialSec />
             <div className="py-20">
                 <div className="mx-auto max-w-[1348px] py-12 rounded-md text-chart-4 px-48 text-center" style={{
                     backgroundImage: "linear-gradient(rgba(0,45,98,0.7), rgba(0,45,98,0.7)), url('/footerbg.png')",

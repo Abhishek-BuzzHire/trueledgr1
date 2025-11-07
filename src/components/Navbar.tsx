@@ -26,10 +26,67 @@ import {
     SheetTrigger,
     SheetClose,
 } from "@/components/ui/sheet";
-import { serviceSec, industrySec } from "@/data/data";
+
 // import { ThemeToggle } from "./ThemeToggle";
 import Link from "next/link";
 import Image from "next/image";
+
+export interface ServiceSec {
+  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>,
+  title: string;
+  description?: string;
+  items?: string[];
+  slug?: string;
+  image?: string;
+}
+
+export const serviceSec: ServiceSec[] = [
+  {
+    // icon: Database,
+    slug: "bookkeeping-service",
+    title: "Bookkeeping Services",
+    description: "We take the stress out of bookkeeping with expert support, clean monthly reports, and CPA-ready financials."
+  },
+  {
+    // icon: Code,
+    slug: "payroll-service",
+    title: "Payroll Services",
+    description: "We run payroll accurately, file taxes on time, and keep your business 100% compliant without stress."
+  },
+  {
+    // icon: Braces,
+    slug: "receivable-payable-service",
+    title: "Receivable & Payable Services",
+    description: "From chasing invoices to paying vendors, we manage AR/AP smoothly - improving cash flow and eliminating late payment stress."
+  },
+  {
+    // icon: Infinity,
+    slug: "catchup-bookkeeping-service",
+    title: "Catch-Up Bookkeeping Services",
+    description: "Behind on books? We clean, reconcile, and deliver accurate, audit-ready financials fast - no more messy backlog."
+  },
+];
+
+export const industrySec: { title: string; href: string; description: string }[] = [
+    {
+        title: "Services - Distributors",
+        href: "bytebuzz",
+        description:
+            "A modal dialog that interrupts the user with important content and expects a response.",
+    },
+    {
+        title: "Services - Fabricators",
+        href: "buzzhire",
+        description:
+            "For sighted users to preview content available behind a link.",
+    },
+    {
+        title: "Services - Architects & Designers",
+        href: "jobs",
+        description:
+            "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+    },
+]
 
 const NavBar = () => {
     const services = serviceSec;
@@ -74,9 +131,9 @@ const NavBar = () => {
                                                     <p className="mb-1 font-semibold text-foreground">
                                                         {service.title}
                                                     </p>
-                                                    {/* <p className="text-sm text-muted-foreground line-clamp-3">
+                                                    <p className="text-sm text-muted-foreground line-clamp-2">
                                                         {service.description}
-                                                    </p> */}
+                                                    </p>
                                                 </div>
                                             </NavigationMenuLink>
                                         ))}

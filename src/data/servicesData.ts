@@ -104,7 +104,7 @@ export const servicesData: Service[] = [
                 {
                     img: "1.svg",
                     head: "Accurate Bookkeeping, Backed by SOPs and 3-Layer Review",
-                    info: "Pre-vetted U.S.-trained professionals follow strict SOPs and CPA-style checklists with 3-layer review for accuracy.",
+                    info: "Pre-vetted USA-trained professionals follow strict SOPs and CPA-style checklists with 3-layer review for accuracy.",
                 },
                 {
                     img: "2.svg",
@@ -148,7 +148,7 @@ export const servicesData: Service[] = [
                     "We maintain a clean, custom chart of accounts for your business.",
                     "We match deposits, fix chargebacks, errors, and any duplicates.",
                     "We send monthly P&L, Balance Sheet, and Cash Flow reports.",
-                    "We coordinate directly with your CPA when it’s tax season.",
+                    "We coordinate directly with your CPA when it's tax season.",
                     "We post journal entries and close your books every month.",
                     "We deliver fully documented, audit-ready books you can rely on.",
                 ]
@@ -180,7 +180,7 @@ export const servicesData: Service[] = [
         },
         readySec: {
             head: "Ready to Stop Worrying About Your Books?",
-            info1: "Schedule a free, no-pressure consultation with a TruBookz expert. We'll review your books, spot blind spots, and give you clarity — even if you don't sign up.",
+            info1: "Schedule a free, no-pressure consultation with a Trueledgr expert. We'll review your books, spot blind spots, and give you clarity — even if you don't sign up.",
             info2: "You'll walk away with insights you can use right away. No hard sell. No strings attached.",
             button: "Book My Free Bookkeeping Consultation",
         },
@@ -273,7 +273,7 @@ export const servicesData: Service[] = [
                 },
                 {
                     head: "No hiring, training, or micromanagement",
-                    info: "You don’t need one more person to manage. You need a system that just works, without taking your time",
+                    info: "You don't need one more person to manage. You need a system that just works, without taking your time",
                 },
                 {
                     head: "Avoid costly tax mistakes and penalties",
@@ -460,7 +460,7 @@ export const servicesData: Service[] = [
                 },
                 {
                     head: "Actionable Ageing Reports & Visibility",
-                    info: "Get structured AP/AR reports, so you can clearly see who owes you and what’s due — no more guessing.",
+                    info: "Get structured AP/AR reports, so you can clearly see who owes you and what's due — no more guessing.",
                 },
                 {
                     head: "No hiring, training, or micromanagement",
@@ -479,7 +479,7 @@ export const servicesData: Service[] = [
                 {
                     img: "2.svg",
                     head: "Clean Aging Reports & Clear Follow-Ups",
-                    info: "Every invoice, bill, and due date is tracked, with structured reminders and follow-up SOPs that don’t let things slip.",
+                    info: "Every invoice, bill, and due date is tracked, with structured reminders and follow-up SOPs that don't let things slip.",
                 },
                 {
                     img: "3.svg",
@@ -551,7 +551,7 @@ export const servicesData: Service[] = [
                 {
                     num: "2",
                     img: "2.svg",
-                    head: " Weekly Execution & Updates",
+                    head: "Weekly Execution & Updates",
                     info: "Each week, we send customer invoices, follow up on payments, process vendor bills, and share aging reports - with zero stress on your team.",
                 },
                 {
@@ -572,7 +572,7 @@ export const servicesData: Service[] = [
             {
                 id: "1",
                 q: "What are accounts receivable (A/R) services?",
-                a: "Accounts receivable services help you manage customer invoices, track overdue payments, and recover what’s owed to your business. At Trueledgr, we prepare invoices, reconcile payments, maintain A/R aging reports, and follow up with customers — so you get paid faster without chasing.",
+                a: "Accounts receivable services help you manage customer invoices, track overdue payments, and recover what's owed to your business. At Trueledgr, we prepare invoices, reconcile payments, maintain A/R aging reports, and follow up with customers — so you get paid faster without chasing.",
             },
             {
                 id: "2",
@@ -627,6 +627,189 @@ export const servicesData: Service[] = [
             {
                 id: "12",
                 q: "Do you coordinate with CPAs during tax season?",
+                a: "Monthly bookkeeping services ensure your business finances are updated, reconciled, and CPA-ready every month. This includes recording transactions, reconciling bank/credit accounts, categorizing expenses, and generating P&L, Balance Sheet, and Cash Flow reports you can trust.",
+            },
+        ]
+    },
+    {
+        slug: "catchup-bookkeeping-service",
+        heroSec: {
+            blueHead: "Catch-Up Bookkeeping",
+            head: "Services in the USA",
+            img: "heroService4.svg",
+            info: [
+                "Falling behind on your books? Whether it's 3 months or 3 years.", 
+                "Trueledgr offers expert catch-up bookkeeping services to clean up your records, fix past errors, and deliver CPA and tax-ready financials fast."
+            ],
+            button: "catch-up"
+        },
+        secTwo: {
+            head: "Proven Performance. Trusted by Businesses Across the USA",
+            info: "Trusted by stone businesses, architects, and SMBs, Trueledgr delivers reliable, efficient, and effective catch-up bookkeeping solutions for financial clarity. Backed by real results, real clients, and a growing team of finance professionals, you can count on us.",
+        },
+        threeSec: {
+            head: "Why Choose to Outsource Catch-up Bookkeeping Services ?",
+            info: "Catch-up bookkeeping isn't just about fixing old numbers. It's how you take back control, reduce stress, and make confident, informed decisions. When your books are behind, you're not just delayed - you're flying blind. You don't know what's coming in, what's going out, or what's really going wrong. And that makes every business decision riskier than it should be.",
+            para: [
+                "Maybe it's been a few months. Maybe longer. But trying to fix it all yourself? That's hours of chasing old statements, fixing miscodes, and second-guessing every number.",
+                "Hire in-house, and now you're training someone to clean up a mess they didn't create - with no guarantee they'll get it right.",
+                "That's why outsourcing catch-up bookkeeping to a real partner is smarter, faster, and wiser choice."
+            ],
+            points: [
+                {
+                    head: "Save Weeks of Cleanup",
+                    info: "Focus on scaling, not cleaning up past errors, chasing old statements, or fixing miscodes. We handle everything from bank syncs to monthly reconciliation.",
+                },
+                {
+                    head: "No hiring, training, or micromanagement",
+                    info: "You get a full finance pod from a bookkeeper, reporting expert, to a manager without managing anyone yourself.",
+                },
+                {
+                    head: "Decision-Ready Reports, Always On Time",
+                    info: "Get fully reconciled CPA-ready books , with clean P&L, Balance Sheet, and Cash Flow insights and custom reports tailored for your business.",
+                },
+            ],
+        },
+        fourSec: {
+            head: "What Makes Us the Preferred Partner for Outsourced Catch-Up Bookkeeping Services",
+            card: [
+                {
+                    img: "1.svg",
+                    head: "A Month-by-Month Catch-Up System No Shortcut",
+                    info: "We rebuild each month separately, so your books stay timeline-accurate, audit-proof, and easy to explain to your CPA.",
+                },
+                {
+                    img: "2.svg",
+                    head: "Deep Cleanup, Not Just Data Entry",
+                    info: "We clean errors, fix misclassified entries, reconcile all accounts, and fix your chart of accounts - no duplicates, no confusion.",
+                },
+                {
+                    img: "3.svg",
+                    head: "CPA-Ready Financials for Every Missing Month",
+                    info: "Get clean P&L, Balance Sheet, and Cash Flow reports - labelled, organised, and built for tax-time clarity.",
+                },
+                {
+                    img: "4.svg",
+                    head: "A Dedicated Finance Pod With Senior Review",
+                    info: "Real bookkeepers handle your backlog, and senior accountants review every file before delivery.",
+                },
+                {
+                    img: "5.svg",
+                    head: "One Point of Contact Providing Total Clarity",
+                    info: "Your account manager runs the process end-to-end, so you never have to manage multiple people or explain things twice.",
+                },
+                {
+                    img: "6.svg",
+                    head: "Complete Confidentiality with Enterprise-Grade Data Security",
+                    info: "We protect your books with encryption, role-based access, and strict protocols to keep financial data safe.",
+                }
+            ]
+        },
+        fiveSec: {
+            head: "Need to Catch Up Before Tax Filing or Compliance?",
+            info: "We'll clean up your books, fix every error, and make your numbers make sense again - fast.",
+            button: "Book Your Catch-Up Strategy Call",
+        },
+        sixSec: [
+            {
+                head: "What is Included in Catch-Up Bookkeeping Services:",
+                card: [
+                    "We gather all your missing bank, card, and gateway statements.",
+                    "We clean and categorise every income, expense, and transfer properly.",
+                    "We reconcile all accounts — banks, cards, loans, Stripe, PayPal, everything.",
+                    "We fix misclassified entries and clean up your chart of accounts.",
+                    "We post adjusting journal entries to reflect your true financial position.",
+                    "We rebuild P&L, Balance Sheet, and Cash Flow month by month.",
+                    "We correct past errors and align everything with accounting standards.",
+                    "We deliver clean, audit-ready books for tax, loans, or compliance.",
+                    "We deliver clean, audit-ready books for tax, loans, or compliance.",
+                ]
+            },
+        ],
+        serviceWork: {
+            head: "How Our Catch-Up Bookkeeping Process Works",
+            info: "From setup to strategy, we slot seamlessly into your workflow.",
+            card: [
+                {
+                    num: "1",
+                    img: "1.svg",
+                    head: "Discovery & Document Collection",
+                    info: "We start by understanding your current state, how far behind you are and what systems (if any) exist. Then we collect missing bank, credit card, and payment gateway statements.",
+                },
+                {
+                    num: "2",
+                    img: "2.svg",
+                    head: "Cleanup, Categorisation & Reconciliation",
+                    info: "We manually enter and categorize transactions, correct past errors, and reconcile every account, including loans and payment processors, every month.",
+                },
+                {
+                    num: "3",
+                    img: "3.svg",
+                    head: "Financial Reports & Final Handoff",
+                    info: "Once the books are clean, we generate a full set of P&L, Balance Sheet, and Cash Flow reports for each missing month, all CPA-ready and audit-proof.",
+                },
+            ]
+        },
+        readySec: {
+            head: "Ready to Stop Worrying About Your Books?",
+            info1: "Schedule a free, no-pressure consultation with a Trueledgr expert. We'll review your books, spot blind spots, and give you clarity - even if you don't sign up.",
+            info2: "You'll walk away with insights you can use right away. No hard sell. No strings attached.",
+            button: "Book My Free Catch up Bookkeeping Consultation",
+        },
+        faqs: [
+            {
+                id: "1",
+                q: "What is catch-up bookkeeping?",
+                a: "Catch-up bookkeeping is the process of cleaning up overdue or incomplete financial records — whether you're 3 months or 3 years behind. It includes categorizing transactions, fixing errors, reconciling accounts, and preparing CPA-ready reports.",
+            },
+            {
+                id: "2",
+                q: "How do I know if my business needs catch-up bookkeeping?",
+                a: "Monthly bookkeeping services ensure your business finances are updated, reconciled, and CPA-ready every month. This includes recording transactions, reconciling bank/credit accounts, categorizing expenses, and generating P&L, Balance Sheet, and Cash Flow reports you can trust.",
+            },
+            {
+                id: "3",
+                q: "How much do catch-up bookkeeping services cost?",
+                a: "Monthly bookkeeping services ensure your business finances are updated, reconciled, and CPA-ready every month. This includes recording transactions, reconciling bank/credit accounts, categorizing expenses, and generating P&L, Balance Sheet, and Cash Flow reports you can trust.",
+            },
+            {
+                id: "4",
+                q: "How long does it take to complete catch-up bookkeeping?",
+                a: "Monthly bookkeeping services ensure your business finances are updated, reconciled, and CPA-ready every month. This includes recording transactions, reconciling bank/credit accounts, categorizing expenses, and generating P&L, Balance Sheet, and Cash Flow reports you can trust.",
+            },
+            {
+                id: "5",
+                q: "Do I need catch-up bookkeeping if I'm only 6 months behind?",
+                a: "Monthly bookkeeping services ensure your business finances are updated, reconciled, and CPA-ready every month. This includes recording transactions, reconciling bank/credit accounts, categorizing expenses, and generating P&L, Balance Sheet, and Cash Flow reports you can trust.",
+            },
+            {
+                id: "6",
+                q: "Can Trueledgr fix errors made by previous bookkeepers?",
+                a: "Monthly bookkeeping services ensure your business finances are updated, reconciled, and CPA-ready every month. This includes recording transactions, reconciling bank/credit accounts, categorizing expenses, and generating P&L, Balance Sheet, and Cash Flow reports you can trust.",
+            },
+            {
+                id: "7",
+                q: "Will my books be tax and CPA-ready after cleanup?",
+                a: "Monthly bookkeeping services ensure your business finances are updated, reconciled, and CPA-ready every month. This includes recording transactions, reconciling bank/credit accounts, categorizing expenses, and generating P&L, Balance Sheet, and Cash Flow reports you can trust.",
+            },
+            {
+                id: "8",
+                q: "How secure is my financial data during cleanup?",
+                a: "Monthly bookkeeping services ensure your business finances are updated, reconciled, and CPA-ready every month. This includes recording transactions, reconciling bank/credit accounts, categorizing expenses, and generating P&L, Balance Sheet, and Cash Flow reports you can trust.",
+            },
+            {
+                id: "9",
+                q: "Do you coordinate directly with my CPA during the process?",
+                a: "Monthly bookkeeping services ensure your business finances are updated, reconciled, and CPA-ready every month. This includes recording transactions, reconciling bank/credit accounts, categorizing expenses, and generating P&L, Balance Sheet, and Cash Flow reports you can trust.",
+            },
+            {
+                id: "10",
+                q: "What if I'm years behind on bookkeeping?",
+                a: "Monthly bookkeeping services ensure your business finances are updated, reconciled, and CPA-ready every month. This includes recording transactions, reconciling bank/credit accounts, categorizing expenses, and generating P&L, Balance Sheet, and Cash Flow reports you can trust.",
+            },
+            {
+                id: "11",
+                q: "What happens after my books are caught up?",
                 a: "Monthly bookkeeping services ensure your business finances are updated, reconciled, and CPA-ready every month. This includes recording transactions, reconciling bank/credit accounts, categorizing expenses, and generating P&L, Balance Sheet, and Cash Flow reports you can trust.",
             },
         ]

@@ -9,25 +9,24 @@ const avatars = [
     "/google.svg",
 ];
 
-interface ServiceHeroSecProps {
-  head: string;
-  blueHead: string;
-  info: string[];
-  img: string;
-  button: string;
+interface IndustryHeroSecProps {
+    title: string;
+    head: string;
+    info: string[];
+    img: string;
 }
 
-const ServiceHeroSec = ({ head, blueHead, info, img, button }: ServiceHeroSecProps) => {
+const IndustryHeroSec = ({ title, head, info, img }: IndustryHeroSecProps) => {
     return (
-        <div className='relative bg-chart-2 flex justify-center py-32 overflow-hidden'>
-            <div className="absolute -bottom-110 -left-75 z-1">
-                <Image src="/circledesign.svg" alt="" width={1094} height={1094} />
-            </div>
+        <div className='relative bg-chart-2 flex justify-center py-20 overflow-hidden text-chart-4'>
             <div className="absolute bg-[#013D84] size-[1146] rounded-full blur-[200px] -bottom-70 -left-20"></div>
             <div className="max-w-[1348px] flex gap-16 justify-between items-end z-2">
-                <div className="max-w-[790px] bg-chart-4 p-12 rounded-md space-y-8 pr-20">
-                    <p className="text-5xl/14 font-bold"><span className="text-chart-3">{blueHead}</span> {head}</p>
-                    <div>
+                <div className="max-w-[790px] rounded-md space-y-8 pr-20">
+                    <div className="space-y-4">
+                        <p className="font-semibold text-2xl">{title}</p>
+                        <p className="text-5xl/14 font-bold">{head}</p>
+                    </div>
+                    <div className="space-y-4">
                         {info.map((para, i) => (
                             <p key={i}>{para}</p>
                         ))}
@@ -50,16 +49,19 @@ const ServiceHeroSec = ({ head, blueHead, info, img, button }: ServiceHeroSecPro
                             <p>From 1K+ Reveiw</p>
                         </div>
                     </div>
-                    <Button className="p-6 px-12 bg-chart-3 rounded-sm font-semibold uppercase text-lg shadow-md/30">Book a Free {button} Consultation</Button>
+                    <div className="space-y-6">
+                        <Button className="p-6 px-12 bg-chart-3 rounded-sm font-semibold uppercase text-lg shadow-md/30">Book a Free finance strategy call</Button>
+                        <p className="font-semibold italic text-[#FBBC05]">Transparent pricing with 15 days fee trial</p>
+                    </div>
                 </div>
                 <div className="relative">
                     <div className="absolute bg-[#23538B] size-[922] rounded-full blur-[200px] -bottom-90 -right-95 -z-10 "></div>
-                    <Image src={`/${img}`} alt={blueHead} width={543.2} height={360.21} className="z-1"/>
-                    
+                    <Image src={`/${img}`} alt={""} width={543.2} height={360.21} className="z-1" />
+
                 </div>
             </div>
         </div>
     )
 }
 
-export default ServiceHeroSec
+export default IndustryHeroSec
