@@ -1,4 +1,3 @@
-import { serviceSec } from "@/data/data";
 import Image from "next/image";
 import React from "react";
 import { FaFacebook, FaInstagram, FaLinkedin, FaTwitter, FaYoutube, FaWhatsapp } from "react-icons/fa";
@@ -28,8 +27,6 @@ interface FooterProps {
     }>;
 }
 
-const services = serviceSec;
-
 const contacts: { image: string, detail: string }[] = [
     {
         image: "phone",
@@ -49,19 +46,19 @@ const defaultSections = [
     {
         title: "Services",
         links: [
-            { name: "Monthly Bookkeeping", href: "/" },
-            { name: "Catch up Bookkeeping", href: "/" },
-            { name: "Payroll Services ", href: "/" },
-            { name: "Accounts Receivable", href: "/" },
-            { name: "Accounts Payable ", href: "/" },
+            { name: "Monthly Bookkeeping", href: "/services/bookkeeping-service" },
+            { name: "Catch up Bookkeeping", href: "/services/catchup-bookkeeping-service" },
+            { name: "Payroll Services ", href: "/services/payroll-service" },
+            { name: "Accounts Receivable", href: "/services/receivable-payable-service" },
+            { name: "Accounts Payable ", href: "/services/receivable-payable-service" },
         ],
     },
     {
         title: "Industry",
         links: [
-            { name: "Stone Distributors & Suppliers", href: "/" },
-            { name: "Stone Fabricators", href: "/" },
-            { name: "Architects & Interior Designers", href: "/" },
+            { name: "Stone Distributors & Suppliers", href: "/industry/distributors" },
+            { name: "Stone Fabricators", href: "/industry/fabricators" },
+            { name: "Architects & Interior Designers", href: "/industry/architects-designers" },
             { name: "SMBs", href: "/" },
             { name: "Startups", href: "/" },
             { name: "CPAs & CPA Firms", href: "/" },

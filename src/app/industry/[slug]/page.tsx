@@ -3,8 +3,11 @@ import PricingPage from "@/components/Pricing"
 import TestimonialSec from "@/components/TestimonialSec"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Button } from "@/components/ui/button"
+import { industryData } from "@/data/industrydata"
 import Image from "next/image"
 import Link from "next/link"
+import { notFound } from "next/navigation"
+import { use } from "react"
 
 const left1: string[] = [
     "Recording all daily sales, purchases, payroll, and overheads in QuickBooks",
@@ -43,7 +46,7 @@ const right1: string[] = [
     "Importing payroll journals and reconciling with GL and system records",
     "Ensuring compliance with state and federal tax laws",
     "Finalising year-end payroll summaries and generating W2s/1099s",
-    "Maintaining audit-ready payroll documentation for employees, contractors, and fabricators ",
+    "Maintaining audit-ready payroll documentation for employees, contractors, and fabricators",
 ]
 
 const right2: string[] = [
@@ -226,21 +229,21 @@ const trustTrue: { head: string, info: string; }[] = [
     },
 ]
 
-const indusWork: { serial: number, img: string, head: string, info: string }[] = [
+const indusWork: { serial: string, img: string, head: string, info: string }[] = [
     {
-        serial: 1,
+        serial: "1",
         img: "1.svg",
         head: "Seamless Onboarding",
         info: "We begin with a quick consultation, connect to your financial tools (Stone Profit System, QuickBooks, Gusto/ADP), and set up your books with clean, accurate records from day one.",
     },
     {
-        serial: 2,
+        serial: "2",
         img: "2.svg",
         head: "Streamlined Communication",
         info: "Your dedicated accounts manager stays in touch through weekly check-ins. You'll get clear updates, resolve flagged items quickly, and avoid back-and-forth.",
     },
     {
-        serial: 3,
+        serial: "3",
         img: "3.svg",
         head: "Monthly Reports That Matter",
         info: "Your books are reconciled and closed by the 5th of every month. We deliver clean P&L, Balance Sheet, Cash Flow, and Key reports that drive better business decisions.",
@@ -439,10 +442,16 @@ const getMonth: { id: string, head: string, subhead: string, info: string[], poi
     },
 ]
 
-const IndustryPage = () => {
+const IndustryPage = ({ params }: { params: Promise<{ slug: string }> }) => {
+
+    const { slug } = use(params)
+        const data = industryData.find((s) => s.slug === slug);
+    
+        if (!data) return notFound();
+
     return (
         <div className=''>
-            <IndustryHeroSec title="Clean Books, Smarter Inventory, Stronger Profits" head="Stone Distributors & Suppliers Bookkeeping & Accounting Services in USA" info={["Trueledgr expertly handles bookkeeping, receivables & payables, payroll, and tailored financial reporting as a specialised bookkeeping service for stone distributors & suppliers.", "Our industry-specific insights provide financial clarity and control, empowering you to make informed decisions, boost profitability, and scale your business with confidence."]} img="heroIndustry1.svg" />
+            <IndustryHeroSec title={data.heroSec.title} head={data.heroSec.head} info={data.heroSec.info} img={data.heroSec.img} />
             <div className="py-20" style={{
                 backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url('/why-choose-bg.png')",
                 backgroundSize: "cover",
@@ -450,16 +459,17 @@ const IndustryPage = () => {
             }}>
                 <div className="space-y-8 mx-auto max-w-[1348px]">
                     <div className="space-y-4">
-                        <p className="text-4xl font-bold capitalize">Clean Books. Accurate Costs. Stronger Margins.</p>
-                        <p className="text-xl font-semibold">Track landed costs, control inventory, and stop margin leaks with expert bookkeeping for stone distributors & suppliers.</p>
-                        <p>You're importing containers, chasing reps, managing holds, and trying to track slabs across Stone Profit Systems.</p>
-                        <p>But when bookkeeping falls behind, everything slips. Your costs become inaccurate, your margins shrink, and cash continues to leak without warning. This leads to reordering blindly, overpaying on low-margin sales, and scrambling at tax time with no clear reports or real visibility.</p>
+                        <p className="text-4xl font-bold capitalize">{data.secTwo.head}</p>
+                        <p className="text-xl font-semibold">{data.secTwo.subhead}</p>
+                        {data.secTwo.para.map((par, i) => (
+                            <p key={i}>{par}</p>
+                        ))}
                     </div>
                     <div className="">
                         <div className="space-y-6 mt-4">
                             <p className="text-md font-bold">Here's what you're dealing with:</p>
                             <div className="grid grid-rows-4 grid-cols-2 gap-8 pr-20">
-                                {sec2.map((sec, i) => (
+                                {data.secTwo.points.map((sec, i) => (
                                     <div key={i} className="flex items-start gap-3">
                                         <Image className="mt-1" src={"/right-tick.svg"} alt="" width={18} height={18} />
                                         <div className="space-y-2">
@@ -472,8 +482,8 @@ const IndustryPage = () => {
                         </div>
                     </div>
                     <div className="space-y-2">
-                        <p className="font-semibold text-lg">Trueledgr was built to fix exactly this.</p>
-                        <p className="text-md">We go beyond bookkeeping giving you financial control, real-time visibility, and clean decision-making reports built for how stone distribution works.</p>
+                        <p className="font-semibold text-lg">{data.secTwo.bhead}</p>
+                        <p className="text-md">{data.secTwo.binfo}</p>
                     </div>
                     <Button className="h-full cursor-pointer text-md uppercase p-4 px-12 font-semibold shadow-md/30 bg-chart-3 rounded-sm mt-6">Book Your Free Strategy Call </Button>
                 </div>
@@ -482,11 +492,11 @@ const IndustryPage = () => {
             <div className="py-20">
                 <div className="space-y-12 mx-auto max-w-[1348px] px-4">
                     <div className="space-y-16">
-                        <p className="text-center text-4xl font-bold capitalize">What we do for Stone Distributors & Suppliers</p>
+                        <p className="text-center text-4xl font-bold capitalize">{data.threeSec.head}</p>
                         <div className="flex justify-between pr-20">
                             <div className="space-y-4">
                                 <p className="text-xl font-semibold">Bookkeeping & Reconciliation:</p>
-                                {left1.map((point, i) => (
+                                {data.threeSec.topics.left1.map((point, i) => (
                                     <div key={i} className="flex gap-4">
                                         <Image className="mt-1" src={"/right-tick.svg"} alt="" width={18} height={18} />
                                         <p>{point}</p>
@@ -499,7 +509,7 @@ const IndustryPage = () => {
                             <Image src="/indusec3/2.svg" alt="" width={336.14} height={280} />
                             <div className="space-y-4">
                                 <p className="text-xl font-semibold">Payroll Management:</p>
-                                {right1.map((point, i) => (
+                                {data.threeSec.topics.right1.map((point, i) => (
                                     <div key={i} className="flex gap-4">
                                         <Image className="mt-1" src={"/right-tick.svg"} alt="" width={18} height={18} />
                                         <p>{point}</p>
@@ -510,7 +520,7 @@ const IndustryPage = () => {
                         <div className="flex justify-between pr-20">
                             <div className="space-y-4">
                                 <p className="text-xl font-semibold">Accounts Receivable Management:</p>
-                                {left2.map((point, i) => (
+                                {data.threeSec.topics.left2.map((point, i) => (
                                     <div key={i} className="flex gap-4">
                                         <Image className="mt-1" src={"/right-tick.svg"} alt="" width={18} height={18} />
                                         <p>{point}</p>
@@ -523,7 +533,7 @@ const IndustryPage = () => {
                             <Image src="/indusec3/4.svg" alt="" width={354.34} height={280} />
                             <div className="space-y-4">
                                 <p className="text-xl font-semibold">Accounts Payable Management:</p>
-                                {right2.map((point, i) => (
+                                {data.threeSec.topics.right2.map((point, i) => (
                                     <div key={i} className="flex gap-4">
                                         <Image className="mt-1" src={"/right-tick.svg"} alt="" width={18} height={18} />
                                         <p>{point}</p>
@@ -534,7 +544,7 @@ const IndustryPage = () => {
                         <div className="flex justify-between pr-20">
                             <div className="space-y-4">
                                 <p className="text-xl font-semibold">Month-End Closures:</p>
-                                {left3.map((point, i) => (
+                                {data.threeSec.topics.left3.map((point, i) => (
                                     <div key={i} className="flex gap-4">
                                         <Image className="mt-1" src={"/right-tick.svg"} alt="" width={18} height={18} />
                                         <p>{point}</p>
@@ -566,12 +576,13 @@ const IndustryPage = () => {
                 <div className="space-y-6 mx-auto max-w-[1348px] text-chart-4">
                     <div className="space-y-4 max-w-3xl pr-20 text-lg">
                         <p className="text-4xl font-bold capitalize">Looking for a better way to handle your finances?</p>
-                        <p>You've seen what we handle. From SPS to QuickBooks, landed costs to sales tax, we manage the backend - so you get financial clarity, clean books, and decision-ready reports.</p>
-                        <p>Let's walk you through exactly how Trueledgr Professional Stone Distributor's bookkeeping service works.</p>
+                        {data.midPhoto.para.map((par, i) => (
+                            <p key={i}>{par}</p>
+                        ))}
                     </div>
                     <div className="space-y-4">
                         <Button className="h-full cursor-pointer text-md uppercase p-4 px-8 font-semibold shadow-md/30 bg-chart-5 rounded-sm mt-6">Book Your Free Finance Strategy Call</Button>
-                        <p className="font-semibold italic text-[#FBBC05]">Want to see what clean books and full financial control look like?</p>
+                        <p className="font-semibold italic text-[#FBBC05]">{data.midPhoto.info}</p>
                     </div>
                 </div>
             </div>
@@ -585,7 +596,7 @@ const IndustryPage = () => {
                             collapsible
                             className="w-full px-32"
                         >
-                            {getMonth.map((item) => (
+                            {data.getMonth.map((item) => (
                                 <AccordionItem key={item.id} value={item.id}>
                                     <AccordionTrigger className="transition-opacity duration-200 hover:no-underline">
                                         <div className="">
@@ -625,20 +636,20 @@ const IndustryPage = () => {
                     <div className="space-y-12 mx-auto max-w-[1348px]">
                         <div className="text-center space-y-4">
                             <p className="text-5xl font-bold capitalize">How our Process Works</p>
-                            <p className="text-xl font-normal">From initial setup to ongoing support, we tailor bookkeeping solutions for stone distributors & suppliers at every stage to fit your business and keep your finances in order.</p>
+                            <p className="text-xl font-normal">{data.indusWork.info}</p>
                         </div>
                         <div className="grid grid-cols-3 gap-8">
-                            {indusWork.map((card, i) => (
+                            {data.indusWork.card.map((box, i) => (
                                 <div key={i} className="p-8 bg-white rounded-md space-y-6 shadow-md">
                                     <div className="relative flex justify-center">
                                         <div className="absolute top-0 left-0 bg-chart-3 p-3 rounded-sm">
-                                            0{card.serial}
+                                            0{box.serial}
                                         </div>
-                                        <Image src={`/indusWork/${card.img}`} alt={card.head} width={206.24} height={153} />
+                                        <Image src={`/indusWork/${box.img}`} alt={box.head} width={206.24} height={153} />
                                     </div>
                                     <div className="text-black space-y-2 text-center">
-                                        <p className="text-xl font-semibold">{card.head}</p>
-                                        <p className="text-md">{card.info}</p>
+                                        <p className="text-xl font-semibold">{box.head}</p>
+                                        <p className="text-md">{box.info}</p>
                                     </div>
                                 </div>
                             ))}
@@ -654,11 +665,11 @@ const IndustryPage = () => {
                             <div className="space-y-6">
                                 <p className="text-4xl font-bold capitalize">Why Trust Trueledgr for Outsourcing Bookkeeping & Accounting Services?</p>
                                 <div className="mt-6 space-y-4">
-                                    <p className="font-semibold text-xl">We bring years of stone industry finance experience into your workflow, helping you buy smarter, sell faster, and grow stronger with every financial decision.</p>
-                                    <p className="text-md">We've seen what holds distributors back, and we fix it fast, with precision and clarity. Here's what sets us apart and makes us the best choice for outsourced bookkeeping services for stone distributors & suppliers:</p>
+                                    <p className="font-semibold text-xl">{data.sixSec.subhead}</p>
+                                    <p className="text-md">{data.sixSec.info}</p>
                                 </div>
                                 <div className="space-y-8">
-                                    {trustTrue.map((p, i) => (
+                                    {data.sixSec.points.map((p, i) => (
                                         <div key={i} className="flex gap-3 items-start">
                                             <Image src={"/right-tick.svg"} alt="" width={22} height={22} className="mt-2" />
                                             <div className="space-y-2">
@@ -667,12 +678,6 @@ const IndustryPage = () => {
                                             </div>
                                         </div>
                                     ))}
-                                    {/* {serveIndus.map((bull, i) => (
-                                            <div key={i} className="flex gap-3 items-center">
-                                                <Image src={"/right-tick.svg"} alt="" width={22} height={22} />
-                                                <p className="text-xl font-semibold">{bull}</p>
-                                            </div>
-                                        ))} */}
                                 </div>
                                 <Button className="h-full cursor-pointer text-md uppercase p-4 px-12 font-semibold shadow-md/30 bg-chart-3 rounded-sm mt-6">Book Your Free Call</Button>
                             </div>
@@ -814,7 +819,7 @@ const IndustryPage = () => {
                             collapsible
                             className="w-full px-32"
                         >
-                            {faqs.map((item) => (
+                            {data.faqs.map((item) => (
                                 <AccordionItem key={item.id} value={item.id}>
                                     <AccordionTrigger className="transition-opacity duration-200 hover:no-underline">
                                         <div className="font-medium sm:py-1 lg:py-2 lg:text-xl">

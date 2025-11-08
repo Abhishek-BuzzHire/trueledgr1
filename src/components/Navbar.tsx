@@ -67,24 +67,18 @@ export const serviceSec: ServiceSec[] = [
   },
 ];
 
-export const industrySec: { title: string; href: string; description: string }[] = [
+export const industrySec: { title: string; href: string; description?: string }[] = [
     {
         title: "Services - Distributors",
-        href: "bytebuzz",
-        description:
-            "A modal dialog that interrupts the user with important content and expects a response.",
+        href: "distributors",
     },
     {
         title: "Services - Fabricators",
-        href: "buzzhire",
-        description:
-            "For sighted users to preview content available behind a link.",
+        href: "fabricators",
     },
     {
         title: "Services - Architects & Designers",
-        href: "jobs",
-        description:
-            "Displays an indicator showing the completion progress of a task, typically displayed as a progress bar.",
+        href: "architects-designers",
     },
 ]
 
@@ -107,7 +101,7 @@ const NavBar = () => {
                             height={50}
                         />
                     </Link>
-                    <NavigationMenu className="hidden lg:block">
+                    <NavigationMenu className="hidden lg:block text-chart-2">
                         <NavigationMenuList>
                             <NavigationMenuItem>
                                 <NavigationMenuLink
@@ -146,7 +140,7 @@ const NavBar = () => {
                                     <div className="grid w-[600px] grid-cols-2 p-3">
                                         {industrySec.map((industry, index) => (
                                             <NavigationMenuLink
-                                                href={`/careers/${industry.href}`}
+                                                href={`/industry/${industry.href}`}
                                                 key={index}
                                                 className="rounded-md p-3 transition-colors hover:bg-muted/70"
                                             >
