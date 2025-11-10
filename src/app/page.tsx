@@ -134,7 +134,7 @@ export default function Home() {
         <div className="space-y-8 mx-auto max-w-[1348px] flex gap-8 justify-between">
           <div className="max-w-3xl">
             <div className="space-y-4">
-              <p className="text-5xl font-bold capitalize">Trueledgr LaunchPad: a simpler way to manage all your financial needs</p>
+              <p className="text-4xl font-bold capitalize">Trueledgr LaunchPad: a simpler way to manage all your financial needs</p>
               <div className="mt-6 space-y-2">
                 <p className="text-xl">You've seen what we do - now imagine getting it all, effortlessly handled in one place.</p>
                 <p>If you're in your first year of business, this is the smartest time to set up your finances right - before the spreadsheets pile up, vendors multiply, or you lose sight of your cash flow.</p>

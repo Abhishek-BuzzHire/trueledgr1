@@ -175,7 +175,7 @@ const NavBar = () => {
                             </NavigationMenuItem>
                             <NavigationMenuItem>
                                 <NavigationMenuLink
-                                    href="/about"
+                                    href="/contact"
                                     className={navigationMenuTriggerStyle()}
                                 >
                                     Contact Us
