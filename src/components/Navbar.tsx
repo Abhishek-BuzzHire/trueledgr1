@@ -159,7 +159,7 @@ const NavBar = () => {
                             </NavigationMenuItem>
                             <NavigationMenuItem>
                                 <NavigationMenuLink
-                                    href="/about"
+                                    href="/"
                                     className={navigationMenuTriggerStyle()}
                                 >
                                     Blog
