@@ -489,7 +489,7 @@ export default function Home() {
                 <div className="flex justify-center">
                   <div className="text-xl text-white w-20 h-20 flex justify-center items-center bg-chart-3 rounded-full border-10 border-chart-1 font-semibold">{card.num}</div>
                 </div>
-                <div className="space-y-20">
+                <div className="space-y-2">
                   <p className="text-xl font-semibold">{card.head}</p>
                   <p className="text-md">{card.info}</p>
                 </div>

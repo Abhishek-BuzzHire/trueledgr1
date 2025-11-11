@@ -34,7 +34,7 @@ const contacts: { image: string, detail: string }[] = [
     },
     {
         image: "email",
-        detail: "trubookz@gmail.com",
+        detail: "trueledgr@gmail.com",
     },
     {
         image: "map",
@@ -61,7 +61,7 @@ const defaultSections = [
             { name: "Architects & Interior Designers", href: "/industry/architects-designers" },
             { name: "SMBs", href: "/" },
             { name: "Startups", href: "/" },
-            { name: "CPAs & CPA Firms", href: "/" },
+            { name: "CPAs & CPA Firms", href: "/cpa" },
         ],
     },
     {
@@ -99,8 +99,8 @@ const Footer = ({
     logo = {
         url: "/",
         src: "/logo1.svg",
-        alt: "ByteBuzz.in",
-        title: "ByteBuzz.in",
+        alt: "/",
+        title: "/",
     },
     sections = defaultSections,
     description = "Don't let bookkeeping stress you out. let us handle it for you!",

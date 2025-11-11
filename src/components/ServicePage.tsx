@@ -602,7 +602,7 @@ const ServicePage = () => {
                     <div className="space-y-16">
                         <div className="space-y-8">
                             <p className="text-4xl font-bold">Ready to Stop Worrying About Your Books?</p>
-                            <p className="text-xl">Schedule a free, no-pressure consultation with a TruBookz expert. We'll review your books, spot blind spots, and give you clarity — even if you don't sign up.</p>
+                            <p className="text-xl">Schedule a free, no-pressure consultation with a TrueLedgr expert. We'll review your books, spot blind spots, and give you clarity — even if you don't sign up.</p>
                         </div>
                         <div className="space-y-12">
                             <p className="text-xl font-semibold">You'll walk away with insights you can use right away. No hard sell. No strings attached.</p>
