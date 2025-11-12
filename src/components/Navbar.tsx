@@ -187,13 +187,12 @@ const NavBar = () => {
                     <div className="hidden items-center gap-4 lg:flex">
                         {/* <Button variant="outline">Contact</Button> */}
                         {/* <ThemeToggle /> */}
-                        <Link href="/contact">
+                        <Link href="/cpa">
                             <Button variant={"secondary"} className="cursor-pointer border-2 border-chart-3 text-chart-3 shadow-md rounded-sm text-md uppercase p-6 px-10 font-semibold">For CPA Firms</Button>
                         </Link>
-                        <Link href="/contact">
+                        <Link href="/">
                             <Button className="cursor-pointer text-md uppercase p-6 px-10 font-semibold shadow-md bg-chart-5 rounded-sm ">Get Started</Button>
                         </Link>
-
                     </div>
                     <Sheet>
                         <SheetTrigger asChild className="lg:hidden">

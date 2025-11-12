@@ -3,8 +3,11 @@ import Pricing2 from "@/components/Pricing2";
 import TestimonialSec from "@/components/TestimonialSec";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { launchpadData } from "@/data/launchpadData";
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import { use } from "react";
 
 const clients: string[] = [
     "xero.png",
@@ -278,10 +281,36 @@ const correct: { head: string, info: string }[] = [
     },
 ]
 
-const LaunchpadPage = () => {
+const workSec: {num: string, img: string, head: string, info: string}[] = [
+    {
+        num: "1",
+        img: "1.svg",
+        head: "Seamless Onboarding",
+        info: "We begin with a quick consultation, connect to your financial tools (SPS, QuickBooks, ADP), and set up your books with clean, accurate records from day one",
+    },
+    {
+        num: "2",
+        img: "2.svg",
+        head: "Streamlined Communication",
+        info: "Your dedicated bookkeeper stays in touch through weekly check-ins. You'll get clear updates, resolve flagged items quickly, and avoid back-and-forth.",
+    },
+    {
+        num: "3",
+        img: "3.svg",
+        head: "Monthly Reports That Matter",
+        info: "Your books are reconciled and closed by the end of every month. We deliver clean P&L, Balance Sheet, Cash Flow, and KPI reports that drive better business decisions.",
+    },
+]
+
+const LaunchpadPage = ({ params }: { params: Promise<{ slug: string }> }) => {
+    const { slug } = use(params)
+            const data = launchpadData.find((s) => s.slug === slug);
+        
+            if (!data) return notFound();
+
     return (
         <>
-            <LaunchpadHeroSec title="Built for Founders. Designed to Scale." head="Bookkeeping & Accounting for Startups" info={["Trueledgr Startup LaunchPad is your all-in-one financial starter kit, built for founders. We handle bookkeeping & accounting for startups, payroll setup, accounts payable and receivable (AP/AR) management, and financial reporting so you can focus on building the future and stop juggling with multiple vendors."]} img="launchpadHero.svg" bline="No credit card required — 100% free, no obligation " />
+            <LaunchpadHeroSec title="Built for Founders. Designed to Scale." head={data.heroSec.head} info={[data.heroSec.info]} img="launchpadHero.svg" bline={data.heroSec.bline} />
 
             <div className="py-20" style={{
                 backgroundImage: "linear-gradient(rgba(255, 255, 255, 0.75), rgba(255, 255, 255, 0.75)), url('/why-choose-bg.png')",
@@ -291,7 +320,7 @@ const LaunchpadPage = () => {
                 <div className="mx-auto max-w-[1348px] space-y-4">
                     <div className="space-y-4">
                         <p className="text-4xl max-w-5xl font-bold capitalize">Why Most Founders Regret Delaying Their Finance Setup And What You Can Do Differently</p>
-                        <p className="text-xl font-semibold">You didn't launch to manage spreadsheets. You launched to build something that matters. Let us handle the numbers.</p>
+                        <p className="text-xl font-semibold">{data.secTwo.one}</p>
                     </div>
                     <div className="flex gap-20 justify-between items-center">
                         <div className="space-y-4">
@@ -306,7 +335,7 @@ const LaunchpadPage = () => {
                                         <p>{w}</p>
                                     </div>
                                 ))}
-                                <p className="text-lg">That's why we created LaunchPad for startups — a bundled setup for founders who want clarity from Day One</p>
+                                <p className="text-lg">{data.secTwo.two}</p>
                             </div>
                             <div className="space-y-4 mt-8">
                                 <p className="font-semibold text-xl">What LaunchPad for Startups Gives You:</p>
@@ -317,13 +346,13 @@ const LaunchpadPage = () => {
                                     </div>
                                 ))}
                             </div>
-                            <p className="italic text-chart-3 mt-8 text-lg">100+ founders using Trueledgr LaunchPad for Startups</p>
+                            <p className="italic text-chart-3 mt-8 text-lg">{data.secTwo.three}</p>
                         </div>
                         <div className="space-y-16">
                             <div className="bg-white rounded-xl shadow-xl/20 p-20 ">
                                 <Image src="/launchpad/3/3.svg" alt="" width={450} height={397.11} />
                             </div>
-                            <Button className="cursor-pointer text-md uppercase p-6 px-12 font-semibold shadow-md/30 bg-chart-3 rounded-sm mt-6">Start Smart — Book Your Free Finance Consultation No</Button>
+                            <Button className="cursor-pointer text-md uppercase p-6 px-12 font-semibold shadow-md/30 bg-chart-3 rounded-sm mt-6">Start Smart — Book Your Free Finance Consultation Now</Button>
                         </div>
                     </div>
                 </div>
@@ -339,13 +368,13 @@ const LaunchpadPage = () => {
                         <Image src="/launchpad/2/2.svg" alt="" width={392.94} height={341.77} />
                         <div className="space-y-4 max-w-3xl text-md">
                             <p className="text-4xl font-bold capitalize">The Easiest Way to Stay Compliant, and in Control - Without Hiring a Full Team</p>
-                            <p>Running a startup is hard but your finances shouldn't be the part that slows you down.Most founders don't fail because of bad ideas. They fail because they make decisions too late, with numbers they can't trust.</p>
+                            <p>Running a {data.word} is hard but your finances shouldn't be the part that slows you down.Most founders don't fail because of bad ideas. They fail because they make decisions too late, with numbers they can't trust.</p>
                             <p>That's where we come in.</p>
-                            <p>With our Startup LaunchPad, you get the best bookkeeping and accounting service for startups, along with payroll management, and clear financial insights - tailored to your startup's stage, without building a finance team from scratch.</p>
+                            <p>With our {data.slug} LaunchPad, you get the best bookkeeping and accounting service for startups, along with payroll management, and clear financial insights - tailored to your startup's stage, without building a finance team from scratch.</p>
                             <p>No more messy spreadsheets and missed deadlines. Just a reliable partner who keeps your books clean and your cash flow clear.</p>
-                            <p>Start smart with Trueledgr Startup LaunchPad -  the simplest, most effective way to take control of your startup finances.</p>
+                            <p>Start smart with Trueledgr {data.slug} LaunchPad -  the simplest, most effective way to take control of your startup finances.</p>
                             <div className="space-y-6">
-                                <Button className="h-full cursor-pointer text-md uppercase p-4 px-12 font-semibold shadow-md/30 bg-chart-3 rounded-sm mt-6">Book Your Free Startup LaunchPad Consultation Now</Button>
+                                <Button className="h-full cursor-pointer text-md uppercase p-4 px-12 font-semibold shadow-md/30 bg-chart-3 rounded-sm mt-6">Book Your Free {data.slug} LaunchPad Consultation Now</Button>
                                 <p className="font-semibold italic">Limited LaunchPad slots available.</p>
                             </div>
                         </div>
@@ -360,7 +389,7 @@ const LaunchpadPage = () => {
                         <p className="text-xl font-semibold">Everything You Need. Nothing You Don't.</p>
                     </div>
                     <div className="grid grid-cols-3 gap-4">
-                        {secFour.map((card, i) => (
+                        {data.secFour.map((card, i) => (
                             <div key={i} className="p-8 space-y-4">
                                 <Image src={`/partner/${card.img}`} alt="" width={72} height={72} />
                                 <p className="text-xl font-semibold">{card.head}</p>
@@ -388,9 +417,9 @@ const LaunchpadPage = () => {
                         </div>
                         <div className="max-w-3xl">
                             <div className="space-y-6">
-                                <p className="text-4xl font-bold capitalize">Why Founders Trust Trueledgr as Their Offshore Extension?</p>
+                                <p className="text-4xl font-bold capitalize">Why {data.slug} Trust Trueledgr as Their Offshore Extension?</p>
                                 <div className="mt-6 space-y-4 text-lg">
-                                    <p>Trueledgr isn't just a service - it's your dedicated finance team understanding the daily pressures and time constraints you face. Trueledgr is designed to operate like an in-house team, giving startups seamless support without added overhead.</p>
+                                    <p>Trueledgr isn't just a service - it's your dedicated finance team understanding the daily pressures and time constraints you face. Trueledgr is designed to operate like an in-house team, giving {data.word} seamless support without added overhead.</p>
                                     <p>We go beyond outsourcing - we give you security, control and quality.</p>
                                 </div>
                                 <div className="space-y-8">
@@ -476,7 +505,7 @@ const LaunchpadPage = () => {
                 <div className="space-y-6 mx-auto max-w-[1348px] text-chart-4">
                     <div className="space-y-4 max-w-4xl text-xl">
                         <p className="text-4xl font-bold capitalize">Let's Make Your Books the Least of Your Problems</p>
-                        <p>Most {secEight.word} don't struggle because of sales or operations. They struggle because their finances are messy, unclear, or delayed.</p>
+                        <p>Most {data.word} don't struggle because of sales or operations. They struggle because their finances are messy, unclear, or delayed.</p>
                         <p>Trueledgr LaunchPad helps you clean it all up fast, simple, and without disrupting your team. Even one short call could reveal gaps you didn't know were there.</p>
                     </div>
                     <div className="space-y-4">
@@ -519,6 +548,33 @@ const LaunchpadPage = () => {
                                 <p className="text-md">{a.info}</p>
                             </div>
                         ))}
+                    </div>
+                </div>
+            </div>
+
+            <div className="bg-chart-4">
+                <div className="py-20 bg-[linear-gradient(to_bottom,_#012E63_60%,_transparent_0%)] text-chart-4">
+                    <div className="space-y-12 mx-auto max-w-[1348px]">
+                        <div className="text-center space-y-4">
+                            <p className="text-5xl font-bold capitalize">How It Works</p>
+                            <p className="text-xl font-normal">From setup to strategy, we slot seamlessly into your workflow.</p>
+                        </div>
+                        <div className="grid grid-cols-3 gap-8">
+                            {workSec.map((box, i) => (
+                                <div key={i} className="p-8 bg-white rounded-md space-y-6 shadow-md">
+                                    <div className="relative flex justify-center">
+                                        <div className="absolute top-0 left-0 bg-chart-3 p-3 rounded-sm">
+                                            0{box.num}
+                                        </div>
+                                        <Image src={`/indusWork/${box.img}`} alt={box.head} width={206.24} height={153} />
+                                    </div>
+                                    <div className="text-black space-y-2 text-center">
+                                        <p className="text-xl font-semibold">{box.head}</p>
+                                        <p className="text-md">{box.info}</p>
+                                    </div>
+                                </div>
+                            ))}
+                        </div>
                     </div>
                 </div>
             </div>
